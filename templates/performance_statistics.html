@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Actors List</title >
+    <style>
+        table{
+            border-collapse: collapse;
+            margin:30px 0;
+        }
+        table tr th {
+            padding: 10px;
+            text-align: center;
+        }
+        table tr td {
+            padding: 10px;
+            text-align: center;
+        }
+        .back-btn {
+            border: 2px solid black;
+            margin-left: 5px;
+            margin-bottom: 10px;
+            background: #2bb7b2;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: white;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: #165d5b;
+        }
+        html,body {
+            padding-bottom: 20px;
+
+        }
+        body{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Performances Statistic</h1>
+<h2>In that statistic we can see the name of the performance, it's description and the number of actors, who performs</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Performance Name</th>
+        <th>Performance Description</th>
+        <th>Number of Actors</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .}}
+    <tr>
+        <td>{{.Name}}</td>
+        <td>{{.Description}}</td>
+        <td>{{.NumActors}}</td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+<a class="back-btn" href="/">Back</a>
+</body>
+</html>

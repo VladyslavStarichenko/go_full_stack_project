@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Actors List</title >
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        table tr th {
+            padding: 10px;
+            text-align: center;
+        }
+        table tr td {
+            padding: 10px;
+            text-align: center;
+        }
+        .edit-actor-btn {
+            background: #ffc107;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: black;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .edit-actor-btn:hover {
+            background: #d79900;
+        }
+
+        .remove-actor-btn {
+            background: #dc3545;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: white;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .remove-actor-btn:hover {
+            background: #b40d1d;
+        }
+
+        .add-actor-btn {
+            margin-bottom: 10px;
+            background: #7bdc35;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: white;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .add-actor-btn:hover {
+            background: #3c7313;
+        }
+
+        html,body {
+            padding-bottom: 20px;
+
+        }
+        body{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Actors List</h1>
+
+<div class="operations">
+    <a class="add-actor-btn" href="/create_actor">Create Actor</a>
+
+    <a class="add-actor-btn" href="/performance_statistics">Statistics</a>
+</div>
+
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Nationality</th>
+        <th>Contact Phone</th>
+        <th>Contact Email</th>
+        <th>Contact Address</th>
+<!--        <th>Employment Start Date</th>-->
+<!--        <th>Employment End Date</th>-->
+<!--        <th>Employment Salary</th>-->
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .}}
+    <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Age}}</td>
+        <td>{{.Gender}}</td>
+        <td>{{.Nationality}}</td>
+        <td>{{.ContactPhone}}</td>
+        <td>{{.ContactEmail}}</td>
+        <td>{{.ContactAddress}}</td>
+<!--        <td>{{.EmploymentStartDate}}</td>-->
+<!--        <td>{{if .EmploymentEndDate}}{{.EmploymentEndDate}}{{else}}N/A{{end}}</td>-->
+<!--        <td>{{if .EmploymentSalary}}{{.EmploymentSalary}}{{else}}N/A{{end}}</td>-->
+        <td><a class="edit-actor-btn"
+               href="/edit_actor/{{.ID}}"
+        >Edit</a></td>
+        <td><a class="remove-actor-btn" href="/remove_actor/{{.ID}}">Remove</a></td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>

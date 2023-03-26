@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Actor</title>
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .edit-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 10px;
+            width: 45%;
+        }
+
+        .form-column label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-column input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            margin-right: 5px;
+            margin-bottom: 10px;
+            background: #7bdc35;
+            border-radius: 6px;
+            border: 2px solid black;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: white;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .submit-btn:hover {
+            background: #3c7313;
+        }
+        .back-btn {
+            border: 2px solid black;
+            margin-left: 5px;
+            margin-bottom: 10px;
+            background: #2bb7b2;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+            color: white;
+            font-size: 14px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: #165d5b;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Edit Actor</h1>
+    <form class="edit-form" method="POST">
+        <div class="form-row">
+            <div class="form-column">
+                <label for="name">Name:</label>
+                <input id="id" type="hidden" name="id" value="{{.ID}}" required>
+                <input id="name" type="text" name="name" value="{{.Name}}" required>
+                <label for="age">Age:</label>
+                <input id="age" type="number" name="age" required value="{{.Age}}">
+                <label for="gender">Gender:</label>
+                <input id="gender" type="text" name="gender" required value="{{.Gender}}">
+                <label for="nationality">Nationality:</label>
+                <input id="nationality" type="text" name="nationality" required value="{{.Nationality}}">
+            </div>
+            <div class="form-column">
+                <label for="contact_phone">Phone:</label>
+                <input id="contact_phone" type="text" name="contact_phone" value="{{.ContactPhone}}">
+                <label for="contact_email">Email:</label>
+                <input id="contact_email" type="email" name="contact_email" value="{{.ContactEmail}}">
+                <label for="contact_address">Address:</label>
+                <input id="contact_address" type="text" name="contact_address" value="{{.ContactAddress}}">
+                <label for="employment_salary">Salary:</label>
+                <input id="employment_salary" type="number" name="employment_salary" required value="{{.EmploymentSalary}}">
+            </div>
+        </div>
+        <div class="button-row">
+            <input class="submit-btn" type="submit" value="Edit Actor">
+            <a class="back-btn" href="/">Back</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
